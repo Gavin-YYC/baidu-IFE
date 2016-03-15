@@ -1,0 +1,208 @@
+.joinus {
+  width: 100%;
+  height: 749px;
+  background: #fff;
+  border-bottom: 1px solid #847b7e;
+}
+.joinus::after {
+  content: "";
+  clear: both;
+}
+
+/* top */
+.joinus .top {
+  padding-top: 118px;
+}
+.joinus .top p {
+  font-size: 21px;
+  text-align: center;
+  font-family: "微软雅黑" fantasy;
+}
+.joinus .top .line {
+  width: 31px;
+  height: 3px;
+  background: #e74f4d;
+  margin: 10px auto;
+}
+.joinus .top .info {
+  font-size: 12px;
+  color: #aaaaaa;
+  line-height: 20px;
+}
+
+/* main */
+.joinus .main {
+  width: 1002px;
+  margin: 0 auto;
+  margin-top: 98px;
+  overflow: hidden;
+}
+.joinus .main .left,
+.joinus .main .right {
+  float: left;
+}
+
+/* left */
+.joinus .main .left {
+  width: 292px;
+}
+.joinus .main .left .list {
+  color: #231815;
+  margin-bottom: 38px;
+}
+.joinus .main .left .list .title {
+  font-size: 14px;
+  margin-bottom: 21px;
+}
+.joinus .main .left .list .content {
+  font-size: 12px;
+  line-height: 20px;
+}
+.joinus .main .left .list .more {
+  text-align: right;
+  font-size: 12px;
+}
+.joinus .main .left .list .more a {
+  text-decoration: none;
+  color: #231815;
+}
+.joinus .main .left .list .more a:hover {
+  text-decoration: underline;
+}
+
+/* right */
+.joinus .main .right {
+  width: 639px;
+  margin-left: 71px;
+  height: 500px;
+}
+.joinus .main .right .form-group {
+  height: 40px;
+  font-size: 12px;
+  color: #231815;
+  margin-bottom: 14px;
+}
+.joinus .main .right .form-group .form {
+  width: 311px;
+  height: 40px;
+  float: left;
+  margin-right: 16px;
+}
+.joinus .main .right .form-group .form input {
+  height: 40px;
+  width: 100%;
+  border: none;
+  background: #ededee;
+}
+.joinus .main .right .form-group .form:nth-last-child(1) {
+  margin-right: 0;
+}
+.joinus .main .right .form-group.textarea {
+  height: 120px;
+}
+.joinus .main .right .form-group.textarea textarea {
+  width: 100%;
+  border: none;
+  background: #ededee;
+  height: 120px;
+}
+.joinus .main .right .form-group .sub {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background: #ededee;
+  font-size: 14px;
+  color: #323333;
+  line-height: 40px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+.joinus .main .right .form-group .sub:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* footer */
+.footer {
+  width: 100%;
+  height: 416px;
+  background: #32353e;
+  overflow: hidden;
+}
+.footer .top {
+  width: 511px;
+  height: 358px;
+  margin: 0 auto;
+}
+.footer .top .link {
+  text-align: center;
+  color: #fff;
+  padding-top: 80px;
+}
+.footer .top .link .title {
+  font-size: 21px;
+  line-height: 35px;
+}
+.footer .top .link .info {
+  font-size: 12px;
+  line-height: 20px
+}
+.footer .top .input {
+  margin-top: 28px;
+}
+.footer .top .input input {
+  width: 100%;
+  height: 40px;
+}
+.footer .top .icons {
+  margin-top: 37px;
+  text-align: center;
+}
+.footer .top .icons img {
+  display: inline-block;
+  margin-right: 28px;
+}
+.footer .top .icons img:nth-last-child(1) {
+  margin-right: 0;
+}
+.footer .bottom {
+  height: 58px;
+  background: #2f3038;
+  line-height: 58px;
+}
+.footer .bottom a {
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+}
+.footer .bottom a.copyright {
+  margin-left: 96px;
+  float: left;
+}
+.footer .bottom a.backtotop {
+  margin-right: 44px;
+  float: right;
+}
+
+/* placeholder */
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    padding-left: 17px;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    padding-left: 17px;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    padding-left: 17px;
+}
+textarea:-ms-input-placeholder {
+    padding-left: 17px;
+    padding-top: 10px;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    padding-left: 17px;
+}
+textarea::-webkit-input-placeholder {
+    padding-left: 17px;
+    padding-top: 10px;
+}
