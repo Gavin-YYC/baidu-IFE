@@ -57,6 +57,7 @@
 }
 .container .top .banner img{
 	border: none;
+	width: 100%;
 }
 .container .top .banner .title{
 	position: absolute;
