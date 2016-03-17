@@ -150,10 +150,24 @@
 }
 .footer .desc .input {
   margin-top: 28px;
+  position: relative;
 }
 .footer .desc .input input {
   width: 100%;
   height: 40px;
+  border: none;
+}
+.footer .desc .input .submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  width: 80px;
+  text-align: center;
+  background: #686166;
+  line-height: 40px;
+  color: #fff;
+  display: inline-block;
 }
 .footer .desc .icons {
   margin-top: 37px;
