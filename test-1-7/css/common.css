@@ -2,3 +2,19 @@
     margin: 0;
     padding: 0;
 }
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.clr{
+    zoom:1;
+}
+.clr:after{
+    line-height:0;
+    visibility: hidden;
+    content:'.';
+    clear:both;
+    display: block;
+}

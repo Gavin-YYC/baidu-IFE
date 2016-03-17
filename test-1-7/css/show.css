@@ -1,19 +1,3 @@
-a{
-    text-decoration: none;
-}
-li{
-    list-style: none;
-}
-.clr{
-    zoom:1;
-}
-.clr:after{
-    line-height:0;
-    visibility: hidden;
-    content:'.';
-    clear:both;
-    display: block;
-}
 .show{
     height:566px;
     width:1280px;
@@ -33,7 +17,7 @@ li{
     text-align: center;
 }
 .show-container{
-    padding-top: 128px; 
+    padding-top: 128px;
 }
 .show h1{
     font-size: 120px;
@@ -86,7 +70,7 @@ li{
     line-height: 14px;
     overflow: hidden;
 }
-.show-r li{ 
+.show-r li{
     width:12px;
     height: 12px;
     margin-right: 14px;
@@ -174,19 +158,3 @@ background: #fff;
 .show-b .white b{
 background: #abaaaa;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
