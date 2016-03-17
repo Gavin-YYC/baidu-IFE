@@ -11,21 +11,21 @@
 }
 
 /* top */
-.joinus .top {
+.joinus .info {
   padding-top: 118px;
 }
-.joinus .top p {
+.joinus .info p {
   font-size: 21px;
   text-align: center;
   font-family: "微软雅黑" fantasy;
 }
-.joinus .top .line {
+.joinus .info .line {
   width: 31px;
   height: 3px;
   background: #e74f4d;
   margin: 10px auto;
 }
-.joinus .top .info {
+.joinus .info .info {
   font-size: 12px;
   color: #aaaaaa;
   line-height: 20px;
