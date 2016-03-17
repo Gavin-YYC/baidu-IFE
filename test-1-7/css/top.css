@@ -32,6 +32,7 @@
 }
 .container .top .nav ul li{
 	float: left;
+	height: 14px;
 	padding: 0 20px 20px;
 	color: #787b83;
 	font-size: 14px;
