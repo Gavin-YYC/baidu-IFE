@@ -1,0 +1,159 @@
+.show{
+    width:1280px;
+    margin:0 auto;
+}
+.show-l{
+    position: relative;
+    width:850px;
+    height:566px;
+    float:left;
+    background: url(../img/show-l-bg.jpg) no-repeat;
+}
+.show-l h1,.show-l h2,.show-l h3{
+    color: #fff;
+}
+.show h1,.show h2,.show h3{
+    text-align: center;
+}
+.show-container{
+    padding-top: 128px;
+}
+.show h1{
+    font-size: 120px;
+    line-height:132px;
+    margin-bottom: 22px;
+}
+.show h2{
+    font-size: 46px;
+    line-height:58px;
+}
+.show h3{
+    font-size: 22px;
+    line-height:44px;
+}
+.show h3 b{
+    color: #e74f4d;
+}
+.show-r{
+    width:430px;
+    height:566px;
+    float:right;
+}
+.show-r-slide{
+    width:290px;
+    margin: 158px auto 0;
+}
+.show-r-slide p{
+    color: #aaa;
+    font-size: 12px;
+    line-height: 30px;
+    text-indent: 2em;
+    margin: 10px 0 42px 0;
+    text-align: justify;
+}
+.show-r-slide a{
+    display: block;
+    width: 104px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border: 1px solid #e46868;
+    font-size: 12px;
+    color: #e46868;
+    margin: 0 auto;
+}
+.show-r ul{
+    margin:25px auto 0;
+    width: 64px;
+    height: 14px;
+    line-height: 14px;
+    overflow: hidden;
+}
+.show-r li{
+    width:12px;
+    height: 12px;
+    margin-right: 14px;
+    float: left;
+    background: url(../img/li-btn.png) no-repeat 0 -18px;
+}
+.show-r li.on{
+    background: url(../img/li-btn.png) no-repeat 0 0;
+}
+.show-r li.last-child{
+    margin-right: 0;
+}
+.show-b{
+    position: relative;
+    width: 425px;
+    height: 520px;
+    float: left;
+}
+.show-b h3{
+    font-size: 18px;
+    line-height: 30px;
+}
+.show-b .red{
+    width: 100%;
+    height: 354px;
+    background: #e74f4d;
+    padding-top: 166px;
+}
+.show-b .white{
+    width: 100%;
+    height: 354px;
+    background: #fff;
+    padding-top: 166px;
+}
+.show-b a{
+    display: block;
+    width: 168px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    margin:0 auto;
+}
+.show-b .white a{
+    border: 1px solid #e74f4d;
+    color: #e74f4d;
+}
+.show-b .red a{
+    border: 1px solid #fff;
+    color: #fff;
+}
+.show-b .red h3{
+    color: #fff;
+}
+.show-b-bg{
+    width: 100%;
+    height: 100%;
+    background: url(../img/show-b-bg.jpg) no-repeat 0 0;
+}
+.triangle-bg{
+    position: absolute;
+    width: 26px;
+    height: 31px;
+    top: 50%;
+    margin-top: -16px;
+    z-index:3;
+}
+.show-l .triangle-bg{
+    right:-2px;
+    background: url(../img/triangle-bg.png) no-repeat 0 0;
+}
+.show-b .triangle-bg{
+    left:-2px;
+    background: url(../img/triangle-bg.png) no-repeat 0 -33px;
+}
+.show-b b{
+    display: block;
+    width:32px;
+    height: 3px;
+    line-height: 3px;
+    margin: 22px auto;
+}
+.show-b .red b{
+background: #fff;
+}
+.show-b .white b{
+background: #abaaaa;
+}
