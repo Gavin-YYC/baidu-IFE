@@ -11,21 +11,21 @@
 }
 
 /* top */
-.joinus .info {
+.joinus .quick {
   padding-top: 118px;
 }
-.joinus .info p {
+.joinus .quick p {
   font-size: 21px;
   text-align: center;
   font-family: "微软雅黑" fantasy;
 }
-.joinus .info .line {
+.joinus .quick .line {
   width: 31px;
   height: 3px;
   background: #e74f4d;
   margin: 10px auto;
 }
-.joinus .info .info {
+.joinus .quick .info {
   font-size: 12px;
   color: #aaaaaa;
   line-height: 20px;
@@ -130,40 +130,40 @@
   background: #32353e;
   overflow: hidden;
 }
-.footer .top {
+.footer .desc {
   width: 511px;
   height: 358px;
   margin: 0 auto;
 }
-.footer .top .link {
+.footer .desc .link {
   text-align: center;
   color: #fff;
   padding-top: 80px;
 }
-.footer .top .link .title {
+.footer .desc .link .title {
   font-size: 21px;
   line-height: 35px;
 }
-.footer .top .link .info {
+.footer .desc .link .info {
   font-size: 12px;
   line-height: 20px
 }
-.footer .top .input {
+.footer .desc .input {
   margin-top: 28px;
 }
-.footer .top .input input {
+.footer .desc .input input {
   width: 100%;
   height: 40px;
 }
-.footer .top .icons {
+.footer .desc .icons {
   margin-top: 37px;
   text-align: center;
 }
-.footer .top .icons img {
+.footer .desc .icons img {
   display: inline-block;
   margin-right: 28px;
 }
-.footer .top .icons img:nth-last-child(1) {
+.footer .desc .icons img:nth-last-child(1) {
   margin-right: 0;
 }
 .footer .bottom {
