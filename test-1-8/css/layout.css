@@ -1,0 +1,116 @@
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.clr{
+    zoom:1;
+}
+.clr:after{
+    line-height:0;
+    visibility: hidden;
+    content:'.';
+    clear:both;
+    display: block;
+}
+.container{
+    border:1px solid #999;
+    padding-left:20px;
+    padding-top:20px;
+    margin:20px;
+}
+.row{
+    margin-bottom: 20px;
+}
+.span1 ,.span2 ,.span3 ,
+.span4 ,.span5 ,.span6 ,
+.span7 ,.span8 ,.span9 ,
+.span10,.span11,.span12{
+height:50px;
+border-right:20px solid #fff;
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box;
+}
+.span-container{
+    width:100%;
+    height:100%;
+    background:#eee;
+    border:1px solid #999;
+}
+    .span1 ,.span2 ,.span3 ,
+    .span4 ,.span5 ,.span6 ,
+    .span7 ,.span8 ,.span9 ,
+    .span10,.span11,.span12{
+    float:left;
+    }
+    .span1{
+        width:8.3333333333%;
+    }
+    .span2{
+        width:16.66666666669%;
+    }
+    .span3{
+        width:25%;
+    }
+    .span4{
+        width:33.33333333329%;
+    }
+    .span5{
+        width:41.6666666667%;
+    }
+    .span6{
+        width:50%;
+    }
+    .span7{
+        width:58.33333333329%;
+    }
+    .span8{
+        width:66.66666666669%;
+    }
+    .span9{
+        width:75%;
+    }
+    .span10{
+        width:83.333333333%;
+    }
+    .span11{
+        width:91.66666666669%;
+    }
+    .span12{
+        width:100%;
+    }
+
+@media (max-width: 767px) {
+    .span1{
+        width:16.66666666669%;
+    }
+    .span2{
+        width:66.66666666669%;
+    }
+    .span2+.span2{
+        width:25%;
+        margin-top: 20px;
+    }
+    .span2+.span6{
+        width:25%;
+        margin-top: 20px;
+    }
+    .row .span4{
+        width:50%;
+    }
+    .row .span4:last-child{
+        width:100%;
+        margin-top:20px;
+    }
+}
+
+
+
+
+
+
+
+
+
