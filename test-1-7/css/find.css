@@ -4,10 +4,10 @@
 	box-sizing: border-box;
 }
 .find ul li:before {
-	content: ""; 
-	display: block; 
-	height: 0; 
-	visibility: hidden; 
+	content: "";
+	display: block;
+	height: 0;
+	visibility: hidden;
 	clear: both;
 }
 .find .city-wrap {
@@ -111,10 +111,10 @@
     line-height: 20px;
 
     transform: rotate(-90deg);
-    -ms-transform:rotate (-90deg); 		
-	-moz-transform:rotate (-90deg); 	
-	-webkit-transform:rotate (-90deg); 	
-	-o-transform:rotate (-90deg); 		
+    -ms-transform:rotate (-90deg);
+	-moz-transform:rotate (-90deg);
+	-webkit-transform:rotate (-90deg);
+	-o-transform:rotate (-90deg);
 }
 
 .find .action-wrap {
@@ -134,18 +134,19 @@
 	height: 337px;
 	margin: 0;
 	z-index: 1;
+	position: relative;
 	border: 1px solid #e8e8e8;
 	background-color: #fff;
 	transition: margin 0.5s;
-	-moz-transition: margin 0.5s; 
-	-webkit-transition: margin 0.5s; 
-	-o-transition: margin 0.5s; 	
+	-moz-transition: margin 0.5s;
+	-webkit-transition: margin 0.5s;
+	-o-transition: margin 0.5s;
 }
 .find ul li .content {
 	position: absolute;
 	display: block;
 	width: 219px;
-	z-index: -1;
+	z-index: 0;
 	text-align: center;
 }
 .find ul li p {
@@ -171,7 +172,7 @@
 .find ul li .action-banner:hover {
 	margin-top: 55px;
 }
-.find .action-img-1 {	
+.find .action-img-1 {
 	background-image: url(../img/action_1.png);
 	background-repeat: no-repeat;
 	background-size: 95%;
