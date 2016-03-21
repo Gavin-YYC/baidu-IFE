@@ -1,0 +1,77 @@
+.about {
+    min-width: 1280px;
+}
+.about > ul{
+    overflow: hidden;
+}
+.about > ul > li {
+    float: left;
+    width: 25%;
+    list-style: none;
+}
+.about > ul > li >ul{
+    padding:47px 0;
+    padding-bottom:66px;
+}
+.about > ul > li >ul>li {
+    list-style: none;
+    margin: 0 auto;
+    text-align: center;
+}
+.about > ul > li >ul>li.icon{
+    height:40px;
+    width: 40px;
+    background: url("../img/dn-logo.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    margin-bottom: 49px;
+}
+.about > ul > li >ul>li.icon.flag{
+    background: url("../img/dn-logo.png") -56px 0;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+.about > ul > li >ul>li.icon.flower{
+    background: url("../img/dn-logo.png") -110px 0;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+.about > ul > li >ul>li.icon.block{
+    background: url("../img/dn-logo.png") -165px 0;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+.about > ul > li >ul>li.word {
+    padding: 0 80px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #7f7e7e;
+    border-right: 2px solid #aba6a5;
+
+}
+.about > ul > li:last-child > ul>li.word{
+    border-right: 0;
+}
+
+
+/*find*/
+.find {
+    min-width: 1280px;
+    background: #ededec;
+    padding:82px 0;
+    padding-top: 90px;
+    text-align: center;
+}
+.find .book-container {
+    width: 92px;
+    height: 92px;
+    margin: 0 auto;
+    margin-bottom:50px;
+}
+.find .book-container img{
+    width: 100%;
+}
+.find h1{
+    color:#867e7a;
+    font-size: 50px;
+}
