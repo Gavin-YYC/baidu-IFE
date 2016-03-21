@@ -1,0 +1,197 @@
+.find {
+	min-width: 1280px;
+	font-family: "微软雅黑";
+	box-sizing: border-box;
+}
+.find ul li:before {
+	content: ""; 
+	display: block; 
+	height: 0; 
+	visibility: hidden; 
+	clear: both;
+}
+.find .city-wrap {
+	height: 341px;
+	position: relative;
+	z-index: 0;
+	background-image: url(../img/find-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.find .city-bg-mask {
+	width: 100%;
+	height: 341px;
+	position: absolute;
+	z-index: -1;
+	background: rgba(170, 53, 51, 0.2);
+}
+.find .city-contain {
+	text-align: center;
+	font-family: inherit;
+	color: #fff;
+}
+.find .city-contain .city-title {
+	padding-top: 55px;
+}
+.find .city-contain .city-title h3{
+	font-size: 21px;
+}
+.find .city-contain .city-horizon {
+	width: 30px;
+	height: 2px;
+	background-color: #fff;
+	display: inline-block;
+}
+.find .city-contain .city-text {
+	padding-top: 20px;
+	font-size: 12px;
+}
+.find .select-section {
+	padding: 50px 120px;
+}
+.find .select-section ul li {
+	position: relative;
+	display: block;
+	float: left;
+	width: 220px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.find .select-section select,
+.find .select-section button {
+	width: 220px;
+	height: 35px;
+}
+.find .select-section button {
+	padding-left: 20px;
+	background-color: #bf4f49;
+	border: none;
+	outline: none;
+	color: #fff;
+	letter-spacing: 20px;
+	line-height: 20px;
+	cursor: pointer;
+}
+.find .select-section button:hover {
+	border: #84403C;
+    box-shadow: 0 0 5px #BF4F49;
+}
+.find .select-section select {
+	display: inline-block;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 34px;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    color: #a8aaaa;
+    overflow: hidden;
+
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -ms-appearance: button;
+    -o-appearance: button;
+}
+.find .select-section select:focus {
+	border: 1px solid #bf4f49;
+	box-shadow: 0 0 5px #BF4F49;
+}
+.find .select-section .select-wrap:after{
+	content: "<";
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 30px;
+	width: 20px;
+	height: 20px;
+	background-color: #bf4f49;
+    vertical-align: middle;
+    line-height: 20px;
+
+    transform: rotate(-90deg);
+    -ms-transform:rotate (-90deg); 		
+	-moz-transform:rotate (-90deg); 	
+	-webkit-transform:rotate (-90deg); 	
+	-o-transform:rotate (-90deg); 		
+}
+
+.find .action-wrap {
+	padding: 100px 110px;
+	height: 406px;
+	text-align: center;
+}
+.find ul li {
+	position: relative;
+	display: block;
+	float: left;
+	padding: 0 20px;
+}
+.find ul li .action-banner {
+	display: block;
+	width: 219px;
+	height: 337px;
+	margin: 0;
+	z-index: 1;
+	border: 1px solid #e8e8e8;
+	background-color: #fff;
+	transition: margin 0.5s;
+	-moz-transition: margin 0.5s; 
+	-webkit-transition: margin 0.5s; 
+	-o-transition: margin 0.5s; 	
+}
+.find ul li .content {
+	position: absolute;
+	display: block;
+	width: 219px;
+	z-index: -1;
+	text-align: center;
+}
+.find ul li p {
+	color: #9f9f9f;
+    font-size: 13px;
+    line-height: 40px;
+}
+.find ul li .top-text {
+	top: 0;
+}
+.find ul li .top-text h4 {
+	color: #323232;
+	font-size: 25px;
+    letter-spacing: 15px;
+    padding-left: 15px;
+}
+.find ul li .bottom-text {
+	top: 350px;
+}
+.find ul li .bottom-text h4{
+	color: #323232;
+}
+.find ul li .action-banner:hover {
+	margin-top: 55px;
+}
+.find .action-img-1 {	
+	background-image: url(../img/action_1.png);
+	background-repeat: no-repeat;
+	background-size: 95%;
+	background-position: center;
+}
+.find .action-img-2 {
+	background-image: url(../img/action_2.png);
+	background-repeat: no-repeat;
+	background-size: 95%;
+	background-position: center;
+}
+.find .action-img-3 {
+	background-image: url(../img/action_3.png);
+	background-repeat: no-repeat;
+	background-size: 95%;
+	background-position: center;
+}
+.find .action-img-4 {
+	background-image: url(../img/action_4.png);
+	background-repeat: no-repeat;
+	background-size: 95%;
+	background-position: center;
+}
