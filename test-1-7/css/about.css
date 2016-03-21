@@ -54,24 +54,24 @@
 }
 
 
-/*find*/
-.find {
+/*what*/
+.about .what {
     min-width: 1280px;
     background: #ededec;
     padding:82px 0;
     padding-top: 90px;
     text-align: center;
 }
-.find .book-container {
+.about .what .book-container {
     width: 92px;
     height: 92px;
     margin: 0 auto;
     margin-bottom:50px;
 }
-.find .book-container img{
+.about .what .book-container img{
     width: 100%;
 }
-.find h1{
+.about .what h1{
     color:#867e7a;
     font-size: 50px;
 }
