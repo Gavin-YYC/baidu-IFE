@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>css grid sistem</title>
+    <style media="screen">
+      .grid-container {
+        width: 100%;
+        max-width: 1200px;
+      }
+      .grid-container * {
+        box-sizing: border-box;
+      }
+      .grid-container .row {
+        margin-top: 12px;
+      }
+      .grid-container .row::before,
+      .grid-container .row::after{
+        content: "";
+        clear: both;
+        display: table;
+      }
+      .grid-container .row [class^='col-'] {
+        float: left;
+        min-height: 1px;
+        width: 8.333333333333334%;
+        /* gutter */
+        padding: 12px;
+      }
+      .grid-container .row [class^='col-'] > p {
+        background: #FFC2C2;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        color: #fff;
+      }
+      .grid-container.outline * {
+        outline: 1px solid #ccc;
+      }
+      .grid-container .row .col-1  { width: 8.333333333333334%; }
+      .grid-container .row .col-2  { width: 16.666666666666668%; }
+      .grid-container .row .col-3  { width: 25%; }
+      .grid-container .row .col-4  { width: 33.333333333333336%; }
+      .grid-container .row .col-5  { width: 41.66666666666667%; }
+      .grid-container .row .col-6  { width: 50%; }
+      .grid-container .row .col-7  { width: 58.333333333333336%; }
+      .grid-container .row .col-8  { width: 66.66666666666667%; }
+      .grid-container .row .col-9  { width: 75%; }
+      .grid-container .row .col-10 { width: 83.33333333333334%; }
+      .grid-container .row .col-11 { width: 91.66666666666667%; }
+      .grid-container .row .col-12 { width: 100%; }
+      @media all and ( max-width: 800px ) {
+        .grid-container .row .col-1  { width: 16.666666666666668%; }
+        .grid-container .row .col-2  { width: 25%; }
+        .grid-container .row .col-3  { width: 33.333333333333336%; }
+        .grid-container .row .col-4  { width: 41.66666666666667%; }
+        .grid-container .row .col-5  { width: 50%; }
+        .grid-container .row .col-6  { width: 58.333333333333336%; }
+        .grid-container .row .col-7  { width: 66.66666666666667%; }
+        .grid-container .row .col-8  { width: 75%; }
+        .grid-container .row .col-9 { width: 83.33333333333334%; }
+        .grid-container .row .col-10 { width: 91.66666666666667%; }
+        .grid-container .row .col-11 { width: 100%; }
+        .grid-container .row .col-12 { width: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container outline">
+      <div class="row">
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-1"><p>col-1</p></div>
+      </div>
+      <div class="row">
+        <div class="col-2"><p>col-2</p></div>
+        <div class="col-2"><p>col-2</p></div>
+        <div class="col-2"><p>col-2</p></div>
+        <div class="col-2"><p>col-2</p></div>
+        <div class="col-2"><p>col-2</p></div>
+        <div class="col-2"><p>col-2</p></div>
+      </div>
+      <div class="row">
+        <div class="col-3"><p>col-3</p></div>
+        <div class="col-3"><p>col-3</p></div>
+        <div class="col-3"><p>col-3</p></div>
+        <div class="col-3"><p>col-3</p></div>
+      </div>
+      <div class="row">
+        <div class="col-4"><p>col-4</p></div>
+        <div class="col-4"><p>col-4</p></div>
+        <div class="col-4"><p>col-4</p></div>
+      </div>
+      <div class="row">
+        <div class="col-2"><p>col-4</p></div>
+        <div class="col-5"><p>col-5</p></div>
+        <div class="col-5"><p>col-5</p></div>
+      </div>
+      <div class="row">
+        <div class="col-6"><p>col-6</p></div>
+        <div class="col-6"><p>col-6</p></div>
+      </div>
+      <div class="row">
+        <div class="col-7"><p>col-6</p></div>
+        <div class="col-3"><p>col-3</p></div>
+        <div class="col-2"><p>col-2</p></div>
+      </div>
+      <div class="row">
+        <div class="col-1"><p>col-1</p></div>
+        <div class="col-2"><p>col-2</p></div>
+        <div class="col-3"><p>col-3</p></div>
+        <div class="col-4"><p>col-4</p></div>
+        <div class="col-2"><p>col-2</p></div>
+      </div>
+    </div>
+  </body>
+</html>
