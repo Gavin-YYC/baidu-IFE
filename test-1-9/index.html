@@ -46,12 +46,12 @@
   showText = function ( e ) {
     if ( e.type === 'keypress' && e.which !== 13) return;
     oSpan.innerHTML = oInput.value;
-  }
+  };
 
   // 事件绑定
   Util.on( oBtn, 'click', showText );
   Util.on( oInput, 'keypress', showText );
-  
+
 })();
 
 </script>
