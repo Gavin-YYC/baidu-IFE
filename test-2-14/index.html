@@ -33,17 +33,21 @@ var aqiData = [
   */
 
   var oUl    = document.getElementById("aqi-list"),
+      // 数组重排
       newArr = aqiData.sort(function ( a, b ) {
         return b[1] - a[1];
       }),
       iLen   = aqiData.length,
       aLiArr = "";
 
+  // 循环遍历新数组
+  // 将内容保存在字符串中，最后一次插入
   for (var i = 0; i < iLen; i++) {
     if ( aqiData[i][1] > 60 ) {
       aLiArr += "<li>" + aqiData[i][0] + ": " + aqiData[i][1] + "</li>";
     }
   }
+  // 插入内容
   oUl.innerHTML = aLiArr;
 
 })();
