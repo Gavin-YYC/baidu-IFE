@@ -1,0 +1,90 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+    <script src="task.js"></script>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      fieldset {
+        width: 900px;
+        margin: 0 auto;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 10px;
+      }
+      fieldset::before,
+      fieldset::after {
+        clear: both;
+      }
+      fieldset .control {
+        float: left;
+      }
+      fieldset .left label {
+        margin-right: 20px;
+      }
+      fieldset .right {
+        margin-left: 100px;
+      }
+      .aqi-chart-wrap {
+        width: 900px;
+        margin: 0 auto;
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px 10px 0 0;
+        box-shadow: 0 2px 10px #000;
+      }
+      .aqi-chart-wrap .title {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .aqi-chart-wrap .column {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: space-around;
+        align-items: flex-start;
+      }
+      .aqi-chart-wrap .column .column-line {
+        width: 6px;
+        background: red;
+      }
+      .aqi-chart-wrap .tip {
+        width: 100px;
+        border: 1px solid #ccc;
+        background: rgba( 255, 255, 255, .9 );
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        font-size: 12px;
+      }
+      .aqi-chart-wrap .date .date-line {
+        width: 8px;
+        height: auto;
+        writing-mode: lr-tb;
+        word-break: break-all;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+<body>
+  <fieldset id="form-gra-time">
+    <legend>请选择日期与城市：</legend>
+    <div class="control left">
+      <label>日：<input name="gra-time" value="day" type="radio" checked="checked"></label>
+      <label>周：<input name="gra-time" value="week" type="radio"></label>
+      <label>月：<input name="gra-time" value="month" type="radio"></label>
+    </div>
+    <div class="control right">城市：
+      <select id="city-select">
+        <option>北京</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <div class="aqi-chart-wrap">
+  </div>
+</body>
+</html>
