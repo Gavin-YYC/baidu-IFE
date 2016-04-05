@@ -99,7 +99,7 @@ function renderChart( data ) {
 
   for ( var i in data ) {
     if ( data.hasOwnProperty( i ) ) {
-      columnStr += '<div class="column-line" data-tip="日期：' + i + "\n空气质量：" + data[i] + '" style="height:' + data[i] + 'px; width:' + Map_Width[ pageState.nowGraTime ] + '; background: ' + randomColor() + '"></div>';
+      columnStr += '<div class="column-line" data-tip="日期：' + i + "&hh&;空气质量：" + data[i] + '" style="height:' + data[i] + 'px; width:' + Map_Width[ pageState.nowGraTime ] + '; background: ' + randomColor() + '"></div>';
       dataStr += '<div class="date-line">' + formatDate( i ).day + '</div>';
     }
   }
@@ -124,7 +124,8 @@ function bindEvent() {
     var tip = Util.$(".tip");
     if ( e.target.classList.toString().indexOf("column-line") > -1 ) {
       tip.style.display = "block";
-      tip.innerHTML = target.dataset.tip;
+      // &hh&; 自定义换行符。。。
+      tip.innerHTML = target.dataset.tip.replace(/\&hh\&;/g,'<br>');
       tip.style.top = e.pageY - tip.offsetHeight - 10 + "px";
       tip.style.left = e.pageX - ( tip.offsetWidth / 2 ) + "px";
     } else {
