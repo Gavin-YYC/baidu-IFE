@@ -49,7 +49,20 @@
       }
       .aqi-chart-wrap .column .column-line {
         width: 6px;
-        background: red;
+      }
+      .aqi-chart-wrap .column .column-line:nth-child(2n+1) {
+        animation: show 1s ease-in;
+      }
+      .aqi-chart-wrap .column .column-line:nth-child(2n) {
+        animation: show 1s ease-out;
+      }
+      @keyframes show {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
       }
       .aqi-chart-wrap .tip {
         width: 100px;
