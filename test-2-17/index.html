@@ -30,6 +30,8 @@
         margin-left: 100px;
       }
       .aqi-chart-wrap {
+        position: relative;
+        padding: 0 5px 0 20px;
         width: 900px;
         margin: 0 auto;
         margin-top: 20px;
@@ -37,11 +39,29 @@
         border-radius: 10px 10px 0 0;
         box-shadow: 0 2px 10px #000;
       }
+      .aqi-chart-wrap .line {
+        position: absolute;
+        left: 10px;
+        bottom: 0;
+        width: 10px;
+        height: 500px;
+        border-right: 1px solid #000;
+      }
+      .aqi-chart-wrap .line span {
+        display: block;
+        width: 10px;
+        border-top: 1px solid #000;
+        height: 100px;
+        font-size: 12px;
+        text-indent: -.8em;
+      }
       .aqi-chart-wrap .title {
         text-align: center;
         margin: 20px 0;
       }
       .aqi-chart-wrap .column {
+        height: 500px;
+        position: relative;
         display: flex;
         flex-wrap: wrap-reverse;
         justify-content: space-around;

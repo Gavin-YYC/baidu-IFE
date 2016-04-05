@@ -24,6 +24,9 @@ var Util = {
   }
 }
 
+// 用于渲染图表的数据
+var chartData = {day: {}, week: {}, month: {}, length: 0};
+
 // 以下两个函数用于随机模拟生成测试数据
 function getDateStr(dat) {
   var y = dat.getFullYear();
@@ -42,6 +45,8 @@ function randomBuildData(seed) {
     returnData[datStr] = Math.ceil(Math.random() * seed);
     dat.setDate(dat.getDate() + 1);
   }
+  // 赋值length属于
+  chartData.length = i;
   return returnData;
 }
 
@@ -56,9 +61,6 @@ var aqiSourceData = {
   "厦门": randomBuildData(100),
   "沈阳": randomBuildData(500)
 };
-
-// 用于渲染图表的数据
-var chartData = {};
 
 // 记录当前页面的表单选项
 var pageState = {
@@ -81,21 +83,15 @@ var Map_Width = {
  * 渲染图表
  */
 function renderChart( data ) {
-  var chartWrap  = Util.$(".aqi-chart-wrap");
+  var chartWrap  = Util.$(".aqi-chart-wrap"), columnStr  = dataStr = "";
   chartWrap.innerHTML = "";
-  var columnArea = document.createElement( "div" ),
-      dataArea   = document.createElement( "div" ),
-      title      = document.createElement( "p" ),
-      columnStr  = dataStr = "";
-
-  columnArea.className = "column";
-  dataArea.className   = "date";
-  title.className      = "title";
-  title.innerHTML      = pageState.nowSelectCity + "地区01-03月份" + Map[pageState.nowGraTime]+ "空气质量状况";
-
-  chartWrap.appendChild( title );
-  chartWrap.appendChild( columnArea );
-  chartWrap.appendChild( dataArea );
+  var html = [
+    '<div class="line"><span>500</span><span>400</span><span>300</span><span>200</span><span>100</span></div>',
+    '<p class="title">' + pageState.nowSelectCity + "地区01-03月份" + Map[pageState.nowGraTime]+ "空气质量状况" + '</p>',
+    '<div class="column"></div>',
+    '<div class="date"></div>'
+  ].join("");
+  chartWrap.innerHTML = html;
 
   for ( var i in data ) {
     if ( data.hasOwnProperty( i ) ) {
@@ -103,10 +99,8 @@ function renderChart( data ) {
       dataStr += '<div class="date-line">' + formatDate( i ).day + '</div>';
     }
   }
-
   bindEvent();
-  columnArea.innerHTML = columnStr;
-  //dataArea.innerHTML = dataStr;
+  Util.$(".column").innerHTML = columnStr;
 }
 
 // 事件绑定
@@ -144,15 +138,10 @@ function formatDate( date ) {
 }
 
 /**
- * 随机生成颜色
- * 生成RGB颜色
+ * 随机生成16进制颜色
  */
 function randomColor() {
-  return 'rgb(' + getRandom() + ',' + getRandom() + ',' + getRandom() + ')';
-}
-// 获取颜色随机数
-function getRandom() {
-  return Math.ceil(Math.random() * 254)
+  return '#' + Math.random().toString(16).substring(2,8);
 }
 /**
  * 日、周、月的radio事件点击时的处理函数
@@ -165,7 +154,6 @@ function graTimeChange( e ) {
     pageState.nowGraTime = e.target.value;
   }
   if ( flag ) renderChart( chartData[ pageState.nowGraTime ] );
-
 }
 
 /**
@@ -179,9 +167,7 @@ function citySelectChange( e ) {
     pageState.nowSelectCity = e.target.value;
   }
   // 设置对应数据
-  if ( flag ) {
-    initAqiChartData();
-  }
+  if ( flag ) initAqiChartData();
 }
 
 /**
@@ -222,47 +208,35 @@ function initCitySelector() {
 function initAqiChartData() {
   // 将原始的源数据处理成图表需要的数据格式
   // 处理好的数据存到 chartData 中
-  var j = i = weekCounter = monthCounter = weekSum = monthSum = 0,
-      week = month = 1, count = {day: {}, week: {}, month: {}};
-
-  chartData = aqiSourceData[ pageState.nowSelectCity ];
-
-  // 统计总数
-  for ( var date in chartData ) {
-    if ( chartData.hasOwnProperty( date ) ) {
-      i++;
-      count.day[ date ] = chartData[ date ];
-    }
-  }
+  var j = weekCounter = monthCounter = weekSum = monthSum = 0,
+      week = month = 1, length = chartData.length, _temp = aqiSourceData[ pageState.nowSelectCity ];
   // 数据过滤
-  for ( var date in chartData ) {
-    if ( chartData.hasOwnProperty( date ) ) {
+  for ( var date in _temp ) {
+    if ( _temp.hasOwnProperty( date ) ) {
       j++, weekCounter++, monthCounter++;
-      weekSum  += parseInt( chartData[ date ] );
-      monthSum += parseInt( chartData[ date ] );
+      weekSum  += parseInt( _temp[ date ] );
+      monthSum += parseInt( _temp[ date ] );
+      chartData.day[ date ] = _temp[ date ];
       // 计算整星期
       if ( j % 7 === 0 ) {
-        count.week[ "第" + week++ + "周" ] = Math.ceil( weekSum / weekCounter );
-        weekSum = 0;
-        weekCounter = 0;
+        chartData.week[ "第" + week++ + "周" ] = Math.ceil( weekSum / weekCounter );
+        weekSum = 0, weekCounter = 0;
       }
       // 计算整月份
       if ( monthCounter === 31 ) {
-        count.month[ "第" + month++ + "月" ] = Math.ceil( monthSum / monthCounter );
-        monthSum = 0;
-        monthCounter = 0;
+        chartData.month[ "第" + month++ + "月" ] = Math.ceil( monthSum / monthCounter );
+        monthSum = 0, monthCounter = 0;
       }
       // 如果不满7天
-      if ( j % 7 !== 0 && Math.ceil( i / 7 ) === Math.ceil( j / 7 ) ) {
-        count.week[ "第" + week + "周" ] = Math.ceil( weekSum / weekCounter );
+      if ( j % 7 !== 0 && Math.ceil( length / 7 ) === Math.ceil( j / 7 ) ) {
+        chartData.week[ "第" + week + "周" ] = Math.ceil( weekSum / weekCounter );
       }
       // 如果不满31天
-      if ( j % 31 !== 0 && Math.ceil( i / 31 ) === Math.ceil( j / 31 ) ) {
-        count.month[ "第" + month + "月" ] = Math.ceil( monthSum / monthCounter );
+      if ( j % 31 !== 0 && Math.ceil( length / 31 ) === Math.ceil( j / 31 ) ) {
+        chartData.month[ "第" + month + "月" ] = Math.ceil( monthSum / monthCounter );
       }
     }
   }
-  chartData = count;
   // 渲染图表
   renderChart( chartData[ pageState.nowGraTime ] );
 }
