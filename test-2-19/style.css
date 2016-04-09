@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.control, .wrap, .chart {
+  min-width: 340px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.wrap, .chart {
+  min-height: 100px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+.wrap::after {
+  content: "";
+  clear: both;
+}
+.wrap p, .chart p {
+  text-align: center;
+  color: #aaa;
+  margin: 10px 0;
+}
+.wrap .wrap-main .cube {
+  float: left;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
+}
+.wrap .wrap-main::after {
+  content: "";
+  clear: both;
+}
+.control .input, .control .btns {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.control .input input {
+  width: 100%;
+  padding: 10px;
+}
+.control .btns .btn {
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  color: #000;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.control .btns .stop {
+  display: none;
+}
+.control .btns .btn:hover {
+  background: #ccc;
+  border-color: #ccc;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+}
+.chart .chart-main {
+  position: relative;
+  height: 300px;
+  margin-left: 40px;
+}
+.chart .chart-main .line {
+  background-color: red;
+  width: 10px;
+  position: absolute;
+  bottom: 0;
+}
