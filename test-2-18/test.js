@@ -40,8 +40,7 @@ window.onload = function () {
         dequeue = this.queue[ this.action ]( value );
         this.render();
       }
-      if ( check ) $input.focus();
-      if ( !check ) alert( dequeue );
+      check ? $input.focus() : alert( dequeue );
     },
     // 渲染内容
     render: function () {

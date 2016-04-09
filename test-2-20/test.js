@@ -1,5 +1,9 @@
 window.onload = function () {
   var Test_18 = {
+    // 事件行为
+    action: [],
+    // 队列
+    queue : [],
     // 工具库
     Util: {
       $: function ( selector ) {
@@ -9,18 +13,13 @@ window.onload = function () {
         return value.replace(/\s+/g, "");
       }
     },
-    // 事件行为
-    action: [],
-    // 队列
-    queue : [],
     // 事件绑定
     bindEvent: function () {
       var that  = this;
       var $btns = this.Util.$(".btns");
-      var reg   = /^btn$/g;
       $btns.addEventListener( 'click', function ( e ) {
         var target = e.target;
-        if ( reg.test( target.clasName ) ) return;
+        if ( target.nodeName.toLowerCase() !== 'a' ) return;
         var action = that.getAction( target );
         that.manageQueue();
         e.preventDefault();
@@ -31,12 +30,17 @@ window.onload = function () {
     // 入队返回长度
     // 出队返回出的字符
     manageQueue: function () {
-      var $input = this.Util.$(".input input"),
-          value  = this.Util.trim($input.value);
-      if ( !value ) return;
-      this.queue[ this.action ]( value );
-      this.render();
-      $input.focus();
+      var $input = this.Util.$(".input textarea"),
+          value  = this.Util.trim($input.value),
+          check = true,
+          dequeue = null;
+
+      if ( this.action === 'pop' || this.action === 'shift' ) check = false;
+      if ( check && value || !check) {
+        dequeue = this.queue[ this.action ]( value );
+        this.render();
+      }
+      check ? $input.focus() : alert( dequeue );
     },
     // 渲染内容
     render: function () {
