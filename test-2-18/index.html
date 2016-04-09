@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>任务十八：基础JavaScript练习（一）</title>
+    <script src="./test.js" charset="utf-8"></script>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .control, .wrap {
+        width: 340px;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .wrap {
+        min-height: 100px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+      }
+      .wrap::after {
+        content: "";
+        clear: both;
+      }
+      .wrap p {
+        text-align: center;
+        color: #aaa;
+        margin: 10px 0;
+      }
+      .wrap .wrap-main .cube {
+        float: left;
+        padding: 5px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
+      }
+      .wrap .wrap-main::after {
+        content: "";
+        clear: both;
+      }
+      .control .input, .control .btns {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .control .input input {
+        width: 100%;
+        padding: 10px;
+      }
+      .control .btns .btn {
+        text-decoration: none;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+        color: #000;
+        transition: all 0.2s ease;
+      }
+      .control .btns .btn:hover {
+        background: #ccc;
+        border-color: #ccc;
+        box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="wrap">
+      <p>效果区域</p>
+      <div class="wrap-main"></div>
+    </div>
+
+    <div class="control">
+        <div class="input">
+          <input type="number" name="name" value="" placeholder="请输入数字">
+        </div>
+        <div class="btns">
+          <a href="" class="btn" data-action="unshift">左侧入</a>
+          <a href="" class="btn" data-action="push">右侧入</a>
+          <a href="" class="btn" data-action="shift">左侧出</a>
+          <a href="" class="btn" data-action="pop">右侧出</a>
+        </div>
+    </div>
+
+  </body>
+</html>
