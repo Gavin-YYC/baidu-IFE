@@ -17,9 +17,10 @@ window.onload = function () {
     bindEvent: function () {
       var that  = this;
       var $btns = this.Util.$(".btns");
+      var reg   = /^btn$/g;
       $btns.addEventListener( 'click', function ( e ) {
         var target = e.target;
-        if ( target.nodeName.toLowerCase() !== 'a' ) return;
+        if ( reg.test( target.clasName ) ) return;
         var action = that.getAction( target );
         that.manageQueue();
         e.preventDefault();
@@ -31,17 +32,11 @@ window.onload = function () {
     // 出队返回出的字符
     manageQueue: function () {
       var $input = this.Util.$(".input input"),
-          value  = this.Util.trim($input.value),
-          check = true,
-          dequeue = null;
-
-      if ( this.action === 'pop' || this.action === 'shift' ) check = false;
-      if ( check && value || !check) {
-        dequeue = this.queue[ this.action ]( value );
-        this.render();
-      }
-      if ( check ) $input.focus();
-      if ( !check ) alert( dequeue );
+          value  = this.Util.trim($input.value);
+      if ( !value ) return;
+      this.queue[ this.action ]( value );
+      this.render();
+      $input.focus();
     },
     // 渲染内容
     render: function () {
