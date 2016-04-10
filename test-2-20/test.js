@@ -10,13 +10,23 @@ window.onload = function () {
         return document.querySelector( selector );
       },
       trim: function ( value ) {
-        return value.replace(/\s+/g, "");
+        return value.replace(/(^\s*)|(\s*$)/g, "");
+      },
+      inArry: function ( ele, arr ) {
+        for (var i = 0; i < arr.length; i++) {
+          if ( arr[i] === ele ) {
+            return true;
+          }
+        }
+        return false;
       }
     },
     // 事件绑定
     bindEvent: function () {
       var that  = this;
       var $btns = this.Util.$(".btns");
+      var $searchBtn = this.Util.$(".search_btn");
+
       $btns.addEventListener( 'click', function ( e ) {
         var target = e.target;
         if ( target.nodeName.toLowerCase() !== 'a' ) return;
@@ -24,6 +34,26 @@ window.onload = function () {
         that.manageQueue();
         e.preventDefault();
       }, false);
+      $searchBtn.addEventListener( 'click', function ( e ) {
+        var indexArr = that.search();
+        that.render( indexArr );
+      })
+    },
+
+    // 搜索
+    search: function () {
+      var $search = this.Util.$(".search");
+      var value   = $search.value;
+      var queue   = this.queue;
+      var len     = queue.length;
+      var indexArr= [];
+
+      for (var i = 0; i < len; i++) {
+        if ( queue[i].indexOf( value ) != -1 ) {
+          indexArr.push( i );
+        }
+      }
+      return indexArr;
     },
 
     // 队列管理
@@ -35,21 +65,60 @@ window.onload = function () {
           check = true,
           dequeue = null;
 
+      // 输入过滤
+      newValue = this.valueFilter( value );
       if ( this.action === 'pop' || this.action === 'shift' ) check = false;
-      if ( check && value || !check) {
-        dequeue = this.queue[ this.action ]( value );
-        this.render();
+      // 入队操作
+      if ( check && newValue ) {
+        for (var i = 0; i < newValue.length; i++) {
+          this.queue[ this.action ]( newValue[i] );
+        }
       }
-      check ? $input.focus() : alert( dequeue );
+      // 出队操作
+      if ( !check ) {
+        if ( this.queue.length ) {
+          dequeue = this.queue[ this.action ]();
+          alert( dequeue );
+        };
+      };
+      // 重新渲染
+      this.render();
+      $input.focus();
+    },
+
+    // 字符串过滤
+    valueFilter: function ( value ) {
+      var reg = /,|，|、| +|\r+|\n+|\t+/g;
+      value = value.replace( reg, ",");
+      var arr = value.split(",");
+      var len = arr.length;
+      var newArr = [];
+      for (var i = 0; i < len; i++) {
+        if ( arr[i] && arr[i] !== '') {
+          newArr.push( arr[i] );
+        }
+      };
+      return newArr;
     },
     // 渲染内容
-    render: function () {
+    render: function ( indexArr ) {
       var $wrap  = this.Util.$(".wrap-main"),
           html   = "",
           queue  = this.queue,
           len    = queue.length;
+
+      $wrap.innerHTML = "";
+
       for (var i = 0; i < len; i++) {
-        html += '<div class="cube">' + queue[i] + '</div>';
+        if ( indexArr ) {
+          if ( this.Util.inArry( i, indexArr )) {
+            html += '<div class="cube" style="background:red">' + queue[i] + '</div>';
+          } else {
+            html += '<div class="cube">' + queue[i] + '</div>';
+          }
+        } else {
+          html += '<div class="cube">' + queue[i] + '</div>';
+        }
       }
       $wrap.innerHTML = html;
     },
@@ -67,7 +136,6 @@ window.onload = function () {
       this.bindEvent();
     }
   };
-
 
   Test_18.init();
 }
