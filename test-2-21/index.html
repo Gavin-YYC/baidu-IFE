@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>任务二十一：基础JavaScript练习（四）</title>
+    <style media="screen">
+      .tags-control-multy, .tags-control {
+        width: 640px;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .tags-control-multy .input, .control .btns {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .tags-control-multy .input textarea {
+        width: 100%;
+        min-height: 100px;
+        padding: 10px;
+      }
+      .tags-control-multy .btns .btn {
+        text-decoration: none;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+        color: #000;
+        transition: all 0.2s ease;
+        display: inline-block;
+      }
+      .tags-control-multy .btns .btn:hover {
+        background: #ccc;
+        border-color: #ccc;
+        box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+      }
+      .tags-control-multy .tag-list .tag, .tags-control .tag-list .tag {
+        display: inline-block;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        margin-right: 3px;
+        margin-top: 3px;
+        cursor: pointer;
+        transition: all .5s ease;
+        background: #78BCFB;
+      }
+      .tags-control-multy .tag-list .tag:hover, .tags-control .tag-list .tag:hover {
+        background: red;
+      }
+      .tags-control-multy .tag-list .tag:hover::before, .tags-control .tag-list .tag:hover::before {
+        content: "删除：";
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <div class="tags-control">
+      <div class="input">
+        <label for="tag-input">Tag:</label>
+        <input type="text" id="tag-input" name="tag" value="" placeholder="请输入tag">
+      </div>
+    </div>
+
+    <div class="tags-control-multy">
+        <div class="input">
+          <textarea name="name" placeholder="请输入内容，可以输入多条内容"></textarea>
+        </div>
+        <div class="btns">
+          <a href="" class="btn">确认兴趣爱好</a>
+        </div>
+    </div>
+
+    <script src="./test.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    window.onload = function () {
+      new Tags({
+        el: '.tags-control',
+        autoComplete: true
+      });
+
+      new Tags({
+        el: '.tags-control-multy',
+      })
+    }
+    </script>
+  </body>
+</html>
